@@ -1,0 +1,140 @@
+
+"$schema" = 'https://starship.rs/config-schema.json'
+
+add_newline = false
+
+format = """
+
+$directory$git_branch$git_status$git_state$fill$cmd_duration
+$python$nodejs$rust$golang$java$ruby$swift$kotlin$lua$zig
+$character"""
+
+palette = "candy"
+
+[palettes.candy]
+ink    = "#12141e"
+pink   = "#f38ba8"
+peach  = "#fab387"
+yellow = "#f9e2af"
+mint   = "#a6e3a1"
+sky    = "#89dceb"
+teal   = "#94e2d5"
+fg     = "#cdd6f4"
+muted  = "#45475a"
+
+[directory]
+format = "[](fg:pink)[󰉋 $path ]( bold bg:pink fg:ink)[](fg:pink) "
+style  = "bold bg:pink fg:ink"
+truncation_length = 3
+truncate_to_repo  = true
+home_symbol       = "~"
+
+[directory.substitutions]
+"Documents" = "docs"
+"Downloads" = "dl"
+"Desktop"   = "desk"
+"Projects"  = "proj"
+
+[git_branch]
+format = "[](fg:peach)[  $branch ]( bold bg:peach fg:ink)[](fg:peach) "
+style  = "bold bg:peach fg:ink"
+
+[git_status]
+format = "([](fg:yellow)[ $all_status$ahead_behind ]( bold bg:yellow fg:ink)[](fg:yellow) )"
+style  = "bold bg:yellow fg:ink"
+
+ahead      = "⇡${count}"
+behind     = "⇣${count}"
+diverged   = "⇕"
+conflicted = "≠"
+untracked  = "?${count}"
+stashed    = "≡"
+modified   = "!${count}"
+staged     = "+${count}"
+renamed    = "»${count}"
+deleted    = "✘${count}"
+
+[git_state]
+format = "[](fg:mint)[ $state( $progress_current/$progress_total) ]( bold bg:mint fg:ink)[](fg:mint) "
+style  = "bold bg:mint fg:ink"
+
+[fill]
+symbol = " "
+
+[cmd_duration]
+format   = "[](fg:teal)[ ⏱ $duration ]( bold bg:teal fg:ink)[](fg:teal)"
+style    = "bold bg:teal fg:ink"
+min_time = 2_000
+
+
+[python]
+format = "[](fg:sky)[py $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["py"]
+detect_files = ["requirements.txt", "pyproject.toml", "setup.py", ".python-version", "Pipfile"]
+
+[nodejs]
+format = "[](fg:sky)[node $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_files = ["package.json", ".nvmrc", ".node-version"]
+detect_folders = ["node_modules"]
+
+[rust]
+format = "[](fg:sky)[rs $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["rs"]
+detect_files = ["Cargo.toml"]
+
+[golang]
+format = "[](fg:sky)[go $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["go"]
+detect_files = ["go.mod", "go.sum"]
+
+[java]
+format = "[](fg:sky)[java $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}"
+detect_extensions = ["java", "gradle", "kt"]
+detect_files = ["pom.xml", "build.gradle", "build.gradle.kts"]
+
+[ruby]
+format = "[](fg:sky)[rb $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["rb"]
+detect_files = ["Gemfile", ".ruby-version"]
+
+[swift]
+format = "[](fg:sky)[swift $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["swift"]
+
+[kotlin]
+format = "[](fg:sky)[kt $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["kt", "kts"]
+
+[lua]
+format = "[](fg:sky)[lua $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["lua"]
+detect_files = [".lua-version"]
+
+[zig]
+format = "[](fg:sky)[zig $version ]( bg:sky fg:ink)[](fg:sky) "
+style  = "bg:sky fg:ink"
+version_format = "v${major}.${minor}"
+detect_extensions = ["zig"]
+
+[character]
+success_symbol = "[❯](bold fg:mint)"
+error_symbol   = "[❯](bold fg:pink)"
+vimcmd_symbol  = "[❮](bold fg:sky)"

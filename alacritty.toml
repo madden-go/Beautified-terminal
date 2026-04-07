@@ -1,0 +1,110 @@
+[window]
+padding          = { x = 14, y = 10 }
+decorations      = "buttonless"       # macOS: remove title bar
+opacity          = 0.96
+blur             = true
+dynamic_title    = true
+startup_mode     = "Windowed"
+
+[scrolling]
+history    = 10000
+multiplier = 3
+
+[font]
+size = 12
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style  = "Regular"
+
+[font.bold]
+family = "JetBrainsMono Nerd Font"
+style  = "Bold"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+style  = "Italic"
+
+[font.offset]
+x = 0
+y = 0    
+
+[cursor]
+style            = { shape = "Block", blinking = "On" }
+blink_interval   = 550
+unfocused_hollow = true
+
+[bell]
+animation = "EaseOutExpo"
+duration  = 0
+
+[selection]
+save_to_clipboard = true
+
+[colors.primary]
+background = "#12141e"
+foreground = "#cdd6f4"
+dim_foreground    = "#7f849c"
+bright_foreground = "#cdd6f4"
+
+[colors.cursor]
+text   = "#12141e"
+cursor = "#94e2d5"   
+
+[colors.vi_mode_cursor]
+text   = "#12141e"
+cursor = "#b4befe"
+
+[colors.search.matches]
+foreground = "#12141e"
+background = "#a6e3a1"
+
+[colors.search.focused_match]
+foreground = "#12141e"
+background = "#f9e2af"
+
+[colors.footer_bar]
+foreground = "#12141e"
+background = "#94e2d5"
+
+[colors.hints.start]
+foreground = "#12141e"
+background = "#f9e2af"
+
+[colors.hints.end]
+foreground = "#12141e"
+background = "#a6adc8"
+
+[colors.selection]
+text       = "#12141e"
+background = "#f5c2e7"
+
+[colors.normal]
+black   = "#1e2030"   # dark surface
+red     = "#f38ba8"   # pink   (accent 1)
+green   = "#a6e3a1"   # mint   (accent 4)
+yellow  = "#f9e2af"   # yellow (accent 3)
+blue    = "#89b4fa"   # lavender blue
+magenta = "#f5c2e7"   # pink-light
+cyan    = "#94e2d5"   # teal   (clock accent)
+white   = "#cdd6f4"   # foreground
+
+[colors.bright]
+black   = "#313244"
+red     = "#f38ba8"
+green   = "#a6e3a1"
+yellow  = "#f9e2af"
+blue    = "#89b4fa"
+magenta = "#f5c2e7"
+cyan    = "#89dceb"   # sky blue (accent 5)
+white   = "#ffffff"
+
+[colors.dim]
+black   = "#1e2030"
+red     = "#d20f39"
+green   = "#40a02b"
+yellow  = "#df8e1d"
+blue    = "#1e66f5"
+magenta = "#ea76cb"
+cyan    = "#179299"
+white   = "#acb0be"
