@@ -3,21 +3,6 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY AUTO_CD
 
-export PATH="/usr/local/go/bin:$HOME/go/bin:$HOME/.local/bin:/opt/nvim/bin:$HOME/.bun/bin:/usr/local/bin:$PATH"
-
-export BUN_INSTALL="$HOME/.bun"
-[ -s "$BUN_INSTALL/_bun" ] && source "$BUN_INSTALL/_bun"
-
-export NVM_DIR="$HOME/.nvm"
-nvm() {
-  unfunction nvm node npm npx
-  [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
-  [ -s "$NVM_DIR/bash_completion" ] && source "$NVM_DIR/bash_completion"
-  nvm "$@"
-}
-node() { nvm; node "$@"; }
-npm()  { nvm; npm  "$@"; }
-npx()  { nvm; npx  "$@"; }
 
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
@@ -44,8 +29,5 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit ice wait lucid
 zinit light zsh-users/zsh-completions
 
-alias ls="eza -a --icons"
-alias notepad="gnome-text-editor"
-alias editor="gnome-text-editor"   
 
 eval "$(starship init zsh)"
