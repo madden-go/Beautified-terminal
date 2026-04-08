@@ -5,7 +5,8 @@
 
 The above pictures are running on Ghostty on Ubuntu 25.10 displaying current language version and git status across different directories.
 
-A beautiful terminal setup running zsh with starship, zinit on either ghostty or alacritty to provide a fast and efficient experience.
+#### A beautiful terminal setup running zsh with starship, zinit on either ghostty or alacritty to provide a fast and efficient experience.
+
 ## Features
 
 - **Cross-platform** - Works on macOS, Linux, and Windows (with limitations)
