@@ -3,6 +3,8 @@
 
 <img width="1381" height="890" alt="Screenshot From 2026-04-09 01-24-31" src="https://github.com/user-attachments/assets/a4576ea1-f416-4bb8-8f17-c493ae92593f" />
 
+The above pictures are running on Ghostty on Ubuntu 25.10 displaying current language version and git status across different directories.
+
 A beautiful terminal setup running zsh with starship, zinit on either ghostty or alacritty to provide a fast and efficient experience.
 ## Features
 
