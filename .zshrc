@@ -12,6 +12,7 @@ setopt HIST_IGNORE_DUPS HIST_IGNORE_SPACE SHARE_HISTORY AUTO_CD
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$HOME/go/bin:$PATH"
 
 # ============================================================================
 # Ghostty Terminal Integration
@@ -73,12 +74,14 @@ export FZF_DEFAULT_OPTS=" \
   --marker='●' \
   --separator='─' \
   --scrollbar='▐' \
-  --info=right"
+  --info=right
+  --ansi
+  --preview='env BAT_THEME=Dracula bat --style=numbers,changes,header --color=always --terminal-width=80 --line-range=:500 {} 2>/dev/null || cat {}'"
 
 # ============================================================================
 # Aliases
 # ============================================================================
-alias ls="eza -a --icons"
+alias ls="eza -a"
 alias notepad="gnome-text-editor"
 alias wg="wordgrinder"
 alias desk="cd ~/Desktop/"
@@ -98,3 +101,47 @@ eval "$(zoxide init zsh)"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export BAT_THEME="ansi"
+
+
+
+# >>> doppio managed >>>
+alias bat='batcat'
+alias lg='lazygit'
+alias pics='cd ~/Pictures'
+alias acads='cd ~/Desktop/academics'
+alias doppio='cd ~/Desktop/projects/doppio'
+alias gc='cd /home/den/Desktop/projects/gophercises'
+alias cs50='cd /home/den/Desktop/projects/cs50'
+alias kitsu='cd /home/den/Desktop/projects/kitsu'
+# <<< doppio managed <<<
+
+
+
+export NVM_DIR="$HOME/.nvm"
+nvm() {
+    unset -f nvm node npm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    nvm "$@"
+}
+node() {
+    unset -f nvm node npm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    node "$@"
+}
+npm() {
+    unset -f nvm node npm
+    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    npm "$@"
+}
+
+# Lazy loading for npx (similar to node/npm)
+npx() {
+    unset -f nvm node npm npx
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    npx "$@"
+}
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
